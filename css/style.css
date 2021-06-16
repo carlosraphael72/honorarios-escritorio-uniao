@@ -1,0 +1,159 @@
+
+/* Container do menu */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+}
+
+/* Links dentro do menu */
+.navbar a{
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Container do menu dropdown */
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+/* Botão dropdown */
+.dropdown .dropbtn{
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit; /*Importante para alinhamento vertical em celulares */
+    margin: 0; /*Importante para alinhamento vertical em celulares */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn{
+    background-color: red;
+}
+
+/* conteudo do dropdown (escondido por padrão) */
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links dentro do dropdown */
+.dropdown-content a{
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+/* adiciona o fundo cinza nos link do dropdown ao passar o mouse */
+.dropdown-content a:hover{
+    background-color: #ddd;
+}
+
+/* Mostra o menu dropdown ao passar o mouse */
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+
+/* =========== Forms ========== */
+
+/* Estilizar os inputs */
+input[type=text], select{
+   /* width: 100%; */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Estilizar o label para mostrar ao lado dos inputs */
+label {
+    padding: 12px 5px 12px 0;
+    display: inline-block;
+}
+
+/* Botão Enviar */
+input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=submit]:hover {
+    background-color: chartreuse;
+}
+
+.container{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 50%;
+    margin: auto;
+}
+
+.col-25{
+    float: left;
+    width: 20%;
+    margin-top: 6px;
+}
+
+.col-75{
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Layout responsivo - quando a tela é menor que 600px, faz 2 colunas empilharem em cima da outra
+ao invés de ao lado da outra */
+@media screen and (max-widht: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+/* exibir itens horizontalmente */
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+/* Adiciona algumas margens para cada label */
+.form-inline label {
+    margin: 5px 10px 5px 0;
+}
+
+.form-inline input {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
