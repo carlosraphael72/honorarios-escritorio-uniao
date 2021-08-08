@@ -72,7 +72,7 @@
 /* =========== Forms ========== */
 
 /* Estilizar os inputs */
-input[type=text], select{
+input[type=text], input[type=email], select{
    /* width: 100%; */
     padding: 12px;
     border: 1px solid #ccc;
@@ -157,3 +157,6 @@ ao invés de ao lado da outra */
     border: 1px solid #ddd;
 }
 
+span.error{
+    display: block;
+}
