@@ -14,6 +14,10 @@
     $cidade = filter_input(INPUT_POST, 'cidade', FILTER_SANITIZE_STRING);
     $honorario = filter_input(INPUT_POST, 'honorario', FILTER_DEFAULT);
 
+    $valor_ponto = str_replace(",", ".", $honorario);
+
+    $valor_numero = floatval($valor_ponto);
+
 /*
     echo "Nome da empresa: $nome_empresa <br>";
     echo "CNPJ: $cnpj <br>";
@@ -31,7 +35,7 @@
     if(isset($_POST['enviar'])){
         try{
             $sqlInsert = "INSERT INTO empresas (nome, cnpj, email, telefone, cep, rua, numero, complemento, bairro, cidade, honorarios)
-             VALUES ('$nome_empresa', '$cnpj', '$email', '$telefone', '$cep', '$rua', '$numero', '$complemento', '$bairro', '$cidade', '$honorario')";
+             VALUES ('$nome_empresa', '$cnpj', '$email', '$telefone', '$cep', '$rua', '$numero', '$complemento', '$bairro', '$cidade', '$valor_numero')";
             $db->exec($sqlInsert);
 
             $_SESSION['msg'] = "<span style='color:green; text-align: center;'>Empresa cadastrada com sucesso</span>";

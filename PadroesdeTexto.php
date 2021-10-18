@@ -1,3 +1,8 @@
+<?php
+    session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,16 +27,16 @@
         </div>
     </div>
 
-    <h1 style="text-align: center; font-family: Arial, Helvetica, sans-serif;">Padrões de Texto</h1>
+    <h1 style="text-align: center; font-family: Arial, Helvetica, sans-serif;">Padrões de Contas</h1>
 
     <div class="container">
-        <form action="">
+        <form method="POST" action="php/processa_padroes_contas.php">
             <div class="row">
                 <div class="col-25">
                     <label for="descricao">Descrição</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="descricao" name="descricao" placeholder="Descrição" size="50">
+                    <input type="text" id="descricao" name="descricao" placeholder="Descrição" size="50" required>
                 </div>
             </div>
             <div class="row">
@@ -39,8 +44,11 @@
                     <label for="valor">Valor</label>
                 </div>
                 <div class="col-75">
-                    <input type="text" id="valor" name="valor" size="10" placeholder="Valor do Honorário" onkeypress="return somenteNumeros(event)">
+                    <input type="text" id="valor" name="valor" size="10" placeholder="Valor do Honorário" data-js="valor" onkeypress="return somenteNumeros(event)" required>
                 </div>
+            </div>
+            <div class="row">
+                <input type="submit" name="enviar" value="Enviar">
             </div>
         </form>
     </div>

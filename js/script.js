@@ -68,13 +68,20 @@ const masks = {
             .replace(/(\d{5})(\d)/, '$1.$2')
             .replace(/(\d{5}\.)(\d{2})(\d)/, '$1$2-$3')
             .replace(/(-\d)\d+?$/, '$1')
+    },
+
+    valor (value) {
+        return value
+           // .replace(/\D/g, '')
+            .replace(/(\d+)/, '$1')
+            .replace(/(,\d{2})\d+?$/, '$1')
     }
 
-  /*  valor (value) {
+   /* valor (value) {
         return value
             .replace(/\D/g, '')
-            .replace(/(\d{2})(\d)/, '$1,$2')
-            .replace(/(\d{2}\,)(\d{2})(\d)/, '')
+            .replace(/(\d{2})(\d)/, '$2,$1')
+            .replace(/(,\d+)/, '$1')
     }*/
 }
 /*
@@ -180,6 +187,7 @@ document.querySelector("form").addEventListener("submit", event => {
 })
 */
 
+// Somente numeros, pontos e virgula
 function somenteNumeros(e){
     var tecla = (window.event) ? event.keyCode : e.which
 
@@ -197,7 +205,7 @@ function somenteNumeros(e){
 
 
 // jQuery
-$(document).ready(function () {
+/*$(document).ready(function () {
     $("select[name='empresa']").change(function () {
         var $honorario = $("input[name='honorario']");
         var empresa = $(this).val();
@@ -209,4 +217,4 @@ $(document).ready(function () {
             $honorario.val(retorno.honorario);
         })
     })
-})
+})*/

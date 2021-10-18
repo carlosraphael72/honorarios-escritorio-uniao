@@ -101,7 +101,7 @@
                         <label for="honorario">Valor do Honorário</label>
                     </div>
                     <div class="col-75">
-                        <input type="text" id="honorario" name="honorario" placeholder="Honorário" size="10" onkeypress="return somenteNumeros(event)" required>
+                        <input type="text" id="honorario" name="honorario" placeholder="Honorário" size="10" data-js="valor" onkeypress="return somenteNumeros(event)" required>
                     </div>
                 </div>
                 <div class="row">
